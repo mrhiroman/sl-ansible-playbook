@@ -25,7 +25,7 @@
 
     - name: Copy index test page
       template:
-        src: "files/default.html"
+        src: "files/default.html.j2"
         dest: "/var/www/{{ var_domain }}/html/default.html"
 
     - name: Copy cgi test script
@@ -35,7 +35,7 @@
 
     - name: Set up Apache virtualhost
       template:
-        src: "files/{{ var_domain }}.conf"
+        src: "files/{{ var_domain }}.conf.j2"
         dest: "/etc/apache2/sites-available/{{ var_domain }}.conf"
 
     - name: Enable cgid
